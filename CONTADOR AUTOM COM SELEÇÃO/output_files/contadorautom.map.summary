@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov 23 20:51:40 2022
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : contadorautom
+Top-level Entity Name : contadorautom
+Family : Cyclone IV E
+Total logic elements : 117
+    Total combinational functions : 117
+    Dedicated logic registers : 108
+Total registers : 108
+Total pins : 10
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

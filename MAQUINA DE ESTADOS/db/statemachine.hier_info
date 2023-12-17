@@ -1,0 +1,205 @@
+|statemachine
+A <= Decodificator:inst.a
+reset => sfejof.IN0
+clock => divisor:gdx.clock1
+up => nextstate:sde.UP
+down => nextstate:sde.DOWN
+B <= Decodificator:inst.b
+C <= Decodificator:inst.c
+D <= Decodificator:inst.d
+E <= Decodificator:inst.e
+F <= Decodificator:inst.f
+G <= Decodificator:inst.g
+
+
+|statemachine|Decodificator:inst
+a <= t1.DB_MAX_OUTPUT_PORT_TYPE
+z => aaa.IN0
+z => inst.IN0
+z => inst11.IN0
+z => inst13.IN2
+z => inst19.IN0
+x => inst7.IN0
+x => inst.IN1
+x => inst2.IN0
+x => inst13.IN1
+x => inst19.IN2
+x => inst22.IN1
+x => inst21.IN0
+x => inst26.IN1
+x => inst24.IN1
+y => inst5.IN1
+y => inst2.IN1
+y => inst11.IN1
+y => inst8.IN0
+y => inst14.IN1
+y => inst15.IN1
+y => inst25.IN0
+w => inst5.IN2
+w => inst1.IN1
+w => inst16.IN1
+w => inst9.IN1
+w => inst23.IN2
+b <= t2.DB_MAX_OUTPUT_PORT_TYPE
+c <= t3.DB_MAX_OUTPUT_PORT_TYPE
+d <= t4.DB_MAX_OUTPUT_PORT_TYPE
+e <= t5.DB_MAX_OUTPUT_PORT_TYPE
+f <= t6.DB_MAX_OUTPUT_PORT_TYPE
+g <= t7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|statemachine|outputlogic:ftyf
+a <= muxin:inst1.s
+w => inst19.IN0
+w => inst3.IN0
+w => inst14.IN0
+x => inst4.IN0
+x => inst10.IN1
+x => inst13.IN1
+x => inst12.IN1
+x => inst16.IN1
+y => inst5.IN0
+y => inst10.IN2
+y => inst12.IN2
+y => inst17.IN2
+z => inst19.IN3
+z => inst.IN2
+z => inst6.IN0
+z => inst10.IN3
+z => inst16.IN2
+b <= muxin:inst2.s
+c <= muxin:inst7.s
+d <= muxin:inst18.s
+
+
+|statemachine|outputlogic:ftyf|muxin:inst1
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+
+|statemachine|outputlogic:ftyf|muxin:inst2
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+
+|statemachine|outputlogic:ftyf|muxin:inst7
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+
+|statemachine|outputlogic:ftyf|muxin:inst18
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+
+|statemachine|divisor:gdx
+S <= inst49.DB_MAX_OUTPUT_PORT_TYPE
+clock1 => inst.IN0
+
+
+|statemachine|nextstate:sde
+W <= muxin:inst49.s
+UP => MUX:inst.UP
+DOWN => MUX:inst.DOWN
+A => inst4.IN0
+A => inst5.IN0
+A => inst11.IN0
+A => inst63.IN0
+B => inst6.IN0
+B => inst13.IN1
+B => inst11.IN2
+B => inst17.IN1
+B => inst25.IN1
+B => inst19.IN1
+B => inst18.IN2
+B => inst63.IN1
+B => inst14.IN2
+B => inst3.IN1
+C => inst7.IN0
+C => inst13.IN2
+C => inst11.IN1
+C => inst27.IN2
+C => inst24.IN1
+C => inst21.IN1
+C => inst18.IN1
+C => inst31.IN1
+C => inst62.IN0
+C => inst41.IN1
+C => inst14.IN1
+C => inst3.IN0
+D => inst13.IN3
+D => inst11.IN3
+D => inst27.IN3
+D => inst24.IN0
+D => inst21.IN0
+D => inst18.IN3
+D => inst62.IN1
+D => inst41.IN2
+D => inst8.IN0
+D => inst47.IN0
+D => inst2.IN2
+D => inst14.IN3
+X <= muxin:inst50.s
+Y <= muxin:inst53.s
+Z <= muxin:inst54.s
+
+
+|statemachine|nextstate:sde|muxin:inst49
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+
+|statemachine|nextstate:sde|MUX:inst
+01 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+UP => inst6.IN0
+UP => inst2.IN0
+UP => inst3.IN0
+UP => inst4.IN0
+DOWN => inst1.IN1
+DOWN => inst7.IN0
+DOWN => inst3.IN1
+DOWN => inst5.IN0
+10 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+11 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+00 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|statemachine|nextstate:sde|muxin:inst50
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+
+|statemachine|nextstate:sde|muxin:inst53
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+
+|statemachine|nextstate:sde|muxin:inst54
+s <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+select => inst1.IN0
+select => inst2.IN0
+1 => inst1.IN1
+0 => inst.IN1
+
+

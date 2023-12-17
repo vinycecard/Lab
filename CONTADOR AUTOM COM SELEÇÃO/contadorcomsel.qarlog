@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/contadorcomsel.qarlog
+
+Archive:	C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/contadorcomsel.qar
+Date:		Sun Nov 27 10:22:35 2022
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/MUX.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/contadorassinc.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/contadorautom.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/contadorautom.qpf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/contadorautom.qsf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/decodificator.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/divisor.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/divisor05.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/divisor2.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/CONTADOR AUTOM COM SELEÇÃO/divisor5.bdf
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 11 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Fri Sep 22 15:55:10 2023
+Source archive file:	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/CONTADOR AUTOM COM SELEÇÃO/contadorcomsel.qar
+Archive was extracted into	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/CONTADOR AUTOM COM SELEÇÃO/contadorcomsel_restored/
+		 - successfully.

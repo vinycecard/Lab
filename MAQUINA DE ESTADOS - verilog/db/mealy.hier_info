@@ -1,0 +1,66 @@
+|moore
+SW[15] => always1.IN1
+SW[15] => y~3.DATAIN
+SW[16] => always1.IN0
+SW[16] => always1.IN0
+SW[16] => always1.IN0
+SW[16] => always1.IN0
+SW[17] => always1.IN1
+SW[17] => always1.IN1
+SW[17] => always1.IN1
+SW[17] => always1.IN1
+CLOCK50 => CLOCK50.IN1
+HEX0[6] <= verilog:comb_281.HEX0
+HEX0[5] <= verilog:comb_281.HEX0
+HEX0[4] <= verilog:comb_281.HEX0
+HEX0[3] <= verilog:comb_281.HEX0
+HEX0[2] <= verilog:comb_281.HEX0
+HEX0[1] <= verilog:comb_281.HEX0
+HEX0[0] <= verilog:comb_281.HEX0
+
+
+|moore|divisor:comb_3
+CLK => S~reg0.CLK
+CLK => OUT[0].CLK
+CLK => OUT[1].CLK
+CLK => OUT[2].CLK
+CLK => OUT[3].CLK
+CLK => OUT[4].CLK
+CLK => OUT[5].CLK
+CLK => OUT[6].CLK
+CLK => OUT[7].CLK
+CLK => OUT[8].CLK
+CLK => OUT[9].CLK
+CLK => OUT[10].CLK
+CLK => OUT[11].CLK
+CLK => OUT[12].CLK
+CLK => OUT[13].CLK
+CLK => OUT[14].CLK
+CLK => OUT[15].CLK
+CLK => OUT[16].CLK
+CLK => OUT[17].CLK
+CLK => OUT[18].CLK
+CLK => OUT[19].CLK
+CLK => OUT[20].CLK
+CLK => OUT[21].CLK
+CLK => OUT[22].CLK
+CLK => OUT[23].CLK
+CLK => OUT[24].CLK
+CLK => OUT[25].CLK
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|moore|verilog:comb_281
+SW[0] => Decoder0.IN3
+SW[1] => Decoder0.IN2
+SW[2] => Decoder0.IN1
+SW[3] => Decoder0.IN0
+HEX0[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

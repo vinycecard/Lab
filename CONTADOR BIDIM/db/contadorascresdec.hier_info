@@ -1,0 +1,49 @@
+|contadorascresdec
+a <= Decodificator:inst10.a
+reset => inst9.IN0
+clock => inst5.IN0
+c_d => inst8.IN0
+b <= Decodificator:inst10.b
+c <= Decodificator:inst10.c
+d <= Decodificator:inst10.d
+e <= Decodificator:inst10.e
+f <= Decodificator:inst10.f
+g <= Decodificator:inst10.g
+
+
+|contadorascresdec|Decodificator:inst10
+a <= t1.DB_MAX_OUTPUT_PORT_TYPE
+z => aaa.IN0
+z => inst.IN0
+z => inst11.IN0
+z => inst13.IN2
+z => inst19.IN0
+x => inst7.IN0
+x => inst.IN1
+x => inst2.IN0
+x => inst13.IN1
+x => inst19.IN2
+x => inst22.IN1
+x => inst21.IN0
+x => inst26.IN1
+x => inst24.IN1
+y => inst5.IN1
+y => inst2.IN1
+y => inst11.IN1
+y => inst8.IN0
+y => inst14.IN1
+y => inst15.IN1
+y => inst25.IN0
+w => inst5.IN2
+w => inst1.IN1
+w => inst16.IN1
+w => inst9.IN1
+w => inst23.IN2
+b <= t2.DB_MAX_OUTPUT_PORT_TYPE
+c <= t3.DB_MAX_OUTPUT_PORT_TYPE
+d <= t4.DB_MAX_OUTPUT_PORT_TYPE
+e <= t5.DB_MAX_OUTPUT_PORT_TYPE
+f <= t6.DB_MAX_OUTPUT_PORT_TYPE
+g <= t7.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,100 @@
+|contadorautom
+A <= contadorassinc:inst1.a
+11 => MUX:inst8.SW11
+10 => MUX:inst8.SW10
+k => divisor05:inst2.clock1
+k => divisor:inst6.clock1
+k => divisor2:inst3.clock1
+k => divisor5:inst4.clock1
+B <= contadorassinc:inst1.b
+C <= contadorassinc:inst1.c
+D <= contadorassinc:inst1.d
+E <= contadorassinc:inst1.e
+F <= contadorassinc:inst1.f
+G <= contadorassinc:inst1.g
+
+
+|contadorautom|contadorassinc:inst1
+a <= Decodificator:inst.a
+reset => inst12.IN0
+k => AAAAAAA.IN0
+b <= Decodificator:inst.b
+c <= Decodificator:inst.c
+d <= Decodificator:inst.d
+e <= Decodificator:inst.e
+f <= Decodificator:inst.f
+g <= Decodificator:inst.g
+
+
+|contadorautom|contadorassinc:inst1|Decodificator:inst
+a <= t1.DB_MAX_OUTPUT_PORT_TYPE
+z => aaa.IN0
+z => inst.IN0
+z => inst11.IN0
+z => inst13.IN2
+z => inst19.IN0
+x => inst7.IN0
+x => inst.IN1
+x => inst2.IN0
+x => inst13.IN1
+x => inst19.IN2
+x => inst22.IN1
+x => inst21.IN0
+x => inst26.IN1
+x => inst24.IN1
+y => inst5.IN1
+y => inst2.IN1
+y => inst11.IN1
+y => inst8.IN0
+y => inst14.IN1
+y => inst15.IN1
+y => inst25.IN0
+w => inst5.IN2
+w => inst1.IN1
+w => inst16.IN1
+w => inst9.IN1
+w => inst23.IN2
+b <= t2.DB_MAX_OUTPUT_PORT_TYPE
+c <= t3.DB_MAX_OUTPUT_PORT_TYPE
+d <= t4.DB_MAX_OUTPUT_PORT_TYPE
+e <= t5.DB_MAX_OUTPUT_PORT_TYPE
+f <= t6.DB_MAX_OUTPUT_PORT_TYPE
+g <= t7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorautom|MUX:inst8
+S <= aa.DB_MAX_OUTPUT_PORT_TYPE
+SW11 => inst4.IN0
+SW11 => inst2.IN0
+SW11 => inst3.IN1
+SW11 => inst6.IN0
+SW10 => inst5.IN0
+SW10 => inst7.IN0
+SW10 => inst3.IN0
+SW10 => inst1.IN1
+05 => 12.IN1
+2 => inst8.IN0
+5 => o.IN0
+1 => inst81.IN0
+
+
+|contadorautom|divisor05:inst2
+S <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+clock1 => inst.IN0
+
+
+|contadorautom|divisor:inst6
+S <= inst49.DB_MAX_OUTPUT_PORT_TYPE
+clock1 => inst.IN0
+
+
+|contadorautom|divisor2:inst3
+S <= inst51.DB_MAX_OUTPUT_PORT_TYPE
+clock1 => inst.IN0
+
+
+|contadorautom|divisor5:inst4
+S <= inst53.DB_MAX_OUTPUT_PORT_TYPE
+clock1 => inst.IN0
+
+

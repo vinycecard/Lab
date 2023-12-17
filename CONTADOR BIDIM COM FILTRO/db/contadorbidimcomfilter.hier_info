@@ -1,0 +1,74 @@
+|contadorbidimcomfilter
+a <= Circuitofinal:inst1.a
+clock => aaa.CLK
+clock => inst4.CLK
+clock => inst5.CLK
+din => aaa.DATAIN
+c_d => Circuitofinal:inst1.c_d
+reset => Circuitofinal:inst1.reset
+b <= Circuitofinal:inst1.b
+c <= Circuitofinal:inst1.c
+d <= Circuitofinal:inst1.d
+e <= Circuitofinal:inst1.e
+f <= Circuitofinal:inst1.f
+g <= Circuitofinal:inst1.g
+
+
+|contadorbidimcomfilter|Circuitofinal:inst1
+a <= Decodificator:inst1.a
+clock => contadorascresdec:inst.clock
+c_d => contadorascresdec:inst.c_d
+reset => contadorascresdec:inst.reset
+b <= Decodificator:inst1.b
+c <= Decodificator:inst1.c
+d <= Decodificator:inst1.d
+e <= Decodificator:inst1.e
+f <= Decodificator:inst1.f
+g <= Decodificator:inst1.g
+
+
+|contadorbidimcomfilter|Circuitofinal:inst1|Decodificator:inst1
+a <= t1.DB_MAX_OUTPUT_PORT_TYPE
+z => aaa.IN0
+z => inst.IN0
+z => inst11.IN0
+z => inst13.IN2
+z => inst19.IN0
+x => inst7.IN0
+x => inst.IN1
+x => inst2.IN0
+x => inst13.IN1
+x => inst19.IN2
+x => inst22.IN1
+x => inst21.IN0
+x => inst26.IN1
+x => inst24.IN1
+y => inst5.IN1
+y => inst2.IN1
+y => inst11.IN1
+y => inst8.IN0
+y => inst14.IN1
+y => inst15.IN1
+y => inst25.IN0
+w => inst5.IN2
+w => inst1.IN1
+w => inst16.IN1
+w => inst9.IN1
+w => inst23.IN2
+b <= t2.DB_MAX_OUTPUT_PORT_TYPE
+c <= t3.DB_MAX_OUTPUT_PORT_TYPE
+d <= t4.DB_MAX_OUTPUT_PORT_TYPE
+e <= t5.DB_MAX_OUTPUT_PORT_TYPE
+f <= t6.DB_MAX_OUTPUT_PORT_TYPE
+g <= t7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorbidimcomfilter|Circuitofinal:inst1|contadorascresdec:inst
+x <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+reset => inst9.IN0
+clock => inst5.IN0
+c_d => inst8.IN0
+y <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+z <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+

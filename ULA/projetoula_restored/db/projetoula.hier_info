@@ -1,0 +1,237 @@
+|projetoula
+s0 <= finalprojectsoma:aaa.S
+sel1 => finalprojectsoma:aaa.SEL1
+sel1 => finalprojectsoma:inst5.SEL1
+sel1 => finalprojectsoma:i.SEL1
+sel1 => finalprojectsoma:inst6.SEL1
+sel1 => inst.IN1
+sel0 => finalprojectsoma:aaa.SEL0
+sel0 => finalprojectsoma:inst5.SEL0
+sel0 => finalprojectsoma:i.SEL0
+sel0 => finalprojectsoma:inst6.SEL0
+ao => finalprojectsoma:aaa.a
+cin => finalprojectsoma:aaa.cin
+bb => finalprojectsoma:aaa.binv
+bb => finalprojectsoma:inst5.binv
+bb => finalprojectsoma:i.binv
+bb => finalprojectsoma:inst6.binv
+b0 => finalprojectsoma:aaa.b
+s1 <= finalprojectsoma:inst5.S
+a1 => finalprojectsoma:inst5.a
+b1 => finalprojectsoma:inst5.b
+s2 <= finalprojectsoma:i.S
+a2 => finalprojectsoma:i.a
+b2 => finalprojectsoma:i.b
+s3 <= finalprojectsoma:inst6.S
+a3 => finalprojectsoma:inst6.a
+b3 => finalprojectsoma:inst6.b
+cout <= inst.DB_MAX_OUTPUT_PORT_TYPE
+a <= Decodificator:inst1.a
+b <= Decodificator:inst1.b
+c <= Decodificator:inst1.c
+d <= Decodificator:inst1.d
+e <= Decodificator:inst1.e
+f <= Decodificator:inst1.f
+g <= Decodificator:inst1.g
+
+
+|projetoula|finalprojectsoma:aaa
+carryout <= somador1bit:aaaaaaa.cout
+ainv => inst18.IN0
+ainv => inst1.IN1
+a => inst17.IN1
+a => not.IN0
+binv => inst2.IN0
+binv => inst11.IN0
+b => inst12.IN0
+b => inst8.IN1
+cin => somador1bit:aaaaaaa.cin
+S <= Ulafinal:inst.S
+SEL1 => Ulafinal:inst.SEL1
+SEL0 => Ulafinal:inst.SEL0
+
+
+|projetoula|finalprojectsoma:aaa|somador1bit:aaaaaaa
+out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+a => inst3.IN0
+a => inst.IN1
+a => inst1.IN1
+b => inst3.IN1
+b => inst.IN0
+b => inst2.IN1
+cin => inst4.IN1
+cin => inst1.IN0
+cin => inst2.IN0
+cout <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projetoula|finalprojectsoma:aaa|Ulafinal:inst
+S <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+SEL0 => akj.IN0
+SEL0 => inst13.IN0
+SEL1 => inst12.IN0
+SEL1 => inst9.IN1
+OR => inst14.IN1
+z => inst.IN1
+SOMADOR => inst10.IN1
+
+
+|projetoula|finalprojectsoma:inst5
+carryout <= somador1bit:aaaaaaa.cout
+ainv => inst18.IN0
+ainv => inst1.IN1
+a => inst17.IN1
+a => not.IN0
+binv => inst2.IN0
+binv => inst11.IN0
+b => inst12.IN0
+b => inst8.IN1
+cin => somador1bit:aaaaaaa.cin
+S <= Ulafinal:inst.S
+SEL1 => Ulafinal:inst.SEL1
+SEL0 => Ulafinal:inst.SEL0
+
+
+|projetoula|finalprojectsoma:inst5|somador1bit:aaaaaaa
+out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+a => inst3.IN0
+a => inst.IN1
+a => inst1.IN1
+b => inst3.IN1
+b => inst.IN0
+b => inst2.IN1
+cin => inst4.IN1
+cin => inst1.IN0
+cin => inst2.IN0
+cout <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projetoula|finalprojectsoma:inst5|Ulafinal:inst
+S <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+SEL0 => akj.IN0
+SEL0 => inst13.IN0
+SEL1 => inst12.IN0
+SEL1 => inst9.IN1
+OR => inst14.IN1
+z => inst.IN1
+SOMADOR => inst10.IN1
+
+
+|projetoula|finalprojectsoma:i
+carryout <= somador1bit:aaaaaaa.cout
+ainv => inst18.IN0
+ainv => inst1.IN1
+a => inst17.IN1
+a => not.IN0
+binv => inst2.IN0
+binv => inst11.IN0
+b => inst12.IN0
+b => inst8.IN1
+cin => somador1bit:aaaaaaa.cin
+S <= Ulafinal:inst.S
+SEL1 => Ulafinal:inst.SEL1
+SEL0 => Ulafinal:inst.SEL0
+
+
+|projetoula|finalprojectsoma:i|somador1bit:aaaaaaa
+out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+a => inst3.IN0
+a => inst.IN1
+a => inst1.IN1
+b => inst3.IN1
+b => inst.IN0
+b => inst2.IN1
+cin => inst4.IN1
+cin => inst1.IN0
+cin => inst2.IN0
+cout <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projetoula|finalprojectsoma:i|Ulafinal:inst
+S <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+SEL0 => akj.IN0
+SEL0 => inst13.IN0
+SEL1 => inst12.IN0
+SEL1 => inst9.IN1
+OR => inst14.IN1
+z => inst.IN1
+SOMADOR => inst10.IN1
+
+
+|projetoula|finalprojectsoma:inst6
+carryout <= somador1bit:aaaaaaa.cout
+ainv => inst18.IN0
+ainv => inst1.IN1
+a => inst17.IN1
+a => not.IN0
+binv => inst2.IN0
+binv => inst11.IN0
+b => inst12.IN0
+b => inst8.IN1
+cin => somador1bit:aaaaaaa.cin
+S <= Ulafinal:inst.S
+SEL1 => Ulafinal:inst.SEL1
+SEL0 => Ulafinal:inst.SEL0
+
+
+|projetoula|finalprojectsoma:inst6|somador1bit:aaaaaaa
+out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+a => inst3.IN0
+a => inst.IN1
+a => inst1.IN1
+b => inst3.IN1
+b => inst.IN0
+b => inst2.IN1
+cin => inst4.IN1
+cin => inst1.IN0
+cin => inst2.IN0
+cout <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projetoula|finalprojectsoma:inst6|Ulafinal:inst
+S <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+SEL0 => akj.IN0
+SEL0 => inst13.IN0
+SEL1 => inst12.IN0
+SEL1 => inst9.IN1
+OR => inst14.IN1
+z => inst.IN1
+SOMADOR => inst10.IN1
+
+
+|projetoula|Decodificator:inst1
+a <= t1.DB_MAX_OUTPUT_PORT_TYPE
+z => aaa.IN0
+z => inst.IN0
+z => inst11.IN0
+z => inst13.IN2
+z => inst19.IN0
+x => inst7.IN0
+x => inst.IN1
+x => inst2.IN0
+x => inst13.IN1
+x => inst19.IN2
+x => inst22.IN1
+x => inst21.IN0
+x => inst26.IN1
+x => inst24.IN1
+y => inst5.IN1
+y => inst2.IN1
+y => inst11.IN1
+y => inst8.IN0
+y => inst14.IN1
+y => inst15.IN1
+y => inst25.IN0
+w => inst5.IN2
+w => inst1.IN1
+w => inst16.IN1
+w => inst9.IN1
+w => inst23.IN2
+b <= t2.DB_MAX_OUTPUT_PORT_TYPE
+c <= t3.DB_MAX_OUTPUT_PORT_TYPE
+d <= t4.DB_MAX_OUTPUT_PORT_TYPE
+e <= t5.DB_MAX_OUTPUT_PORT_TYPE
+f <= t6.DB_MAX_OUTPUT_PORT_TYPE
+g <= t7.DB_MAX_OUTPUT_PORT_TYPE
+
+

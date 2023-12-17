@@ -1,0 +1,1523 @@
+Timing Analyzer report for mealy
+Fri Dec 15 16:34:27 2023
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'CLOCK50'
+ 13. Slow 1200mV 85C Model Setup: 'divisor:comb_3|S'
+ 14. Slow 1200mV 85C Model Hold: 'CLOCK50'
+ 15. Slow 1200mV 85C Model Hold: 'divisor:comb_3|S'
+ 16. Slow 1200mV 85C Model Metastability Summary
+ 17. Slow 1200mV 0C Model Fmax Summary
+ 18. Slow 1200mV 0C Model Setup Summary
+ 19. Slow 1200mV 0C Model Hold Summary
+ 20. Slow 1200mV 0C Model Recovery Summary
+ 21. Slow 1200mV 0C Model Removal Summary
+ 22. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 23. Slow 1200mV 0C Model Setup: 'CLOCK50'
+ 24. Slow 1200mV 0C Model Setup: 'divisor:comb_3|S'
+ 25. Slow 1200mV 0C Model Hold: 'CLOCK50'
+ 26. Slow 1200mV 0C Model Hold: 'divisor:comb_3|S'
+ 27. Slow 1200mV 0C Model Metastability Summary
+ 28. Fast 1200mV 0C Model Setup Summary
+ 29. Fast 1200mV 0C Model Hold Summary
+ 30. Fast 1200mV 0C Model Recovery Summary
+ 31. Fast 1200mV 0C Model Removal Summary
+ 32. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 33. Fast 1200mV 0C Model Setup: 'CLOCK50'
+ 34. Fast 1200mV 0C Model Setup: 'divisor:comb_3|S'
+ 35. Fast 1200mV 0C Model Hold: 'CLOCK50'
+ 36. Fast 1200mV 0C Model Hold: 'divisor:comb_3|S'
+ 37. Fast 1200mV 0C Model Metastability Summary
+ 38. Multicorner Timing Analysis Summary
+ 39. Board Trace Model Assignments
+ 40. Input Transition Times
+ 41. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 42. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 43. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 44. Setup Transfers
+ 45. Hold Transfers
+ 46. Report TCCS
+ 47. Report RSKM
+ 48. Unconstrained Paths Summary
+ 49. Clock Status Summary
+ 50. Unconstrained Input Ports
+ 51. Unconstrained Output Ports
+ 52. Unconstrained Input Ports
+ 53. Unconstrained Output Ports
+ 54. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; mealy                                               ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.5%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                             ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; Clock Name       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets              ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; CLOCK50          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK50 }          ;
+; divisor:comb_3|S ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divisor:comb_3|S } ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                              ;
++------------+-----------------+------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name       ; Note                                                          ;
++------------+-----------------+------------------+---------------------------------------------------------------+
+; 284.09 MHz ; 250.0 MHz       ; CLOCK50          ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 419.11 MHz ; 419.11 MHz      ; divisor:comb_3|S ;                                                               ;
++------------+-----------------+------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary       ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; CLOCK50          ; -2.520 ; -46.989       ;
+; divisor:comb_3|S ; -1.386 ; -10.266       ;
++------------------+--------+---------------+
+
+
++------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary       ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; CLOCK50          ; 0.559 ; 0.000         ;
+; divisor:comb_3|S ; 0.598 ; 0.000         ;
++------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++------------------+--------+-----------------------+
+; Clock            ; Slack  ; End Point TNS         ;
++------------------+--------+-----------------------+
+; CLOCK50          ; -3.000 ; -37.695               ;
+; divisor:comb_3|S ; -1.285 ; -12.850               ;
++------------------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK50'                                                                                         ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -2.520 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.437      ;
+; -2.503 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.423      ;
+; -2.497 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.414      ;
+; -2.490 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.407      ;
+; -2.453 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.370      ;
+; -2.428 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.345      ;
+; -2.418 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.752      ;
+; -2.418 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.335      ;
+; -2.412 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.332      ;
+; -2.407 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.514     ; 2.891      ;
+; -2.407 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.327      ;
+; -2.385 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.305      ;
+; -2.378 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.298      ;
+; -2.364 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.698      ;
+; -2.341 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.262      ;
+; -2.338 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.255      ;
+; -2.316 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.236      ;
+; -2.314 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.515     ; 2.797      ;
+; -2.314 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.333      ; 3.645      ;
+; -2.309 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.514     ; 2.793      ;
+; -2.308 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.225      ;
+; -2.292 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.511     ; 2.779      ;
+; -2.286 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.620      ;
+; -2.284 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.205      ;
+; -2.283 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.204      ;
+; -2.282 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.616      ;
+; -2.281 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.202      ;
+; -2.262 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.183      ;
+; -2.254 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.175      ;
+; -2.247 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.168      ;
+; -2.240 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.157      ;
+; -2.238 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.155      ;
+; -2.231 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.152      ;
+; -2.231 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.565      ;
+; -2.230 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.564      ;
+; -2.228 ; divisor:comb_3|OUT[20] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.716      ;
+; -2.226 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.146      ;
+; -2.220 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.141      ;
+; -2.218 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.139      ;
+; -2.217 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.138      ;
+; -2.213 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.134      ;
+; -2.212 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.080     ; 3.130      ;
+; -2.211 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.132      ;
+; -2.210 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.131      ;
+; -2.206 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.512     ; 2.692      ;
+; -2.197 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.335      ; 3.530      ;
+; -2.196 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.116      ;
+; -2.194 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.511     ; 2.681      ;
+; -2.192 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.109      ;
+; -2.185 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.106      ;
+; -2.181 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.333      ; 3.512      ;
+; -2.175 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.335      ; 3.508      ;
+; -2.175 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.096      ;
+; -2.171 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.659      ;
+; -2.171 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.092      ;
+; -2.170 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.658      ;
+; -2.168 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.656      ;
+; -2.168 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.335      ; 3.501      ;
+; -2.159 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.080      ;
+; -2.157 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.078      ;
+; -2.155 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.489      ;
+; -2.152 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.515     ; 2.635      ;
+; -2.151 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.072      ;
+; -2.150 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.484      ;
+; -2.149 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.070      ;
+; -2.148 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.069      ;
+; -2.138 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.059      ;
+; -2.137 ; divisor:comb_3|OUT[12] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.333      ; 3.468      ;
+; -2.135 ; divisor:comb_3|OUT[15] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.511     ; 2.622      ;
+; -2.130 ; divisor:comb_3|OUT[21] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.618      ;
+; -2.128 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.048      ;
+; -2.123 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.040      ;
+; -2.112 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.098     ; 3.012      ;
+; -2.108 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.335      ; 3.441      ;
+; -2.107 ; divisor:comb_3|OUT[12] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.081     ; 3.024      ;
+; -2.107 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.080     ; 3.025      ;
+; -2.106 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.335      ; 3.439      ;
+; -2.102 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.023      ;
+; -2.101 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.435      ;
+; -2.101 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.022      ;
+; -2.099 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 3.020      ;
+; -2.097 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.431      ;
+; -2.096 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.335      ; 3.429      ;
+; -2.095 ; divisor:comb_3|OUT[24] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.514     ; 2.579      ;
+; -2.091 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.512     ; 2.577      ;
+; -2.081 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[15] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.336      ; 3.415      ;
+; -2.080 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.078     ; 3.000      ;
+; -2.079 ; divisor:comb_3|OUT[19] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.515     ; 2.562      ;
+; -2.078 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.511     ; 2.565      ;
+; -2.077 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.511     ; 2.564      ;
+; -2.075 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.511     ; 2.562      ;
+; -2.075 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.098     ; 2.975      ;
+; -2.074 ; divisor:comb_3|OUT[17] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.512     ; 2.560      ;
+; -2.073 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.561      ;
+; -2.072 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.560      ;
+; -2.070 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.510     ; 2.558      ;
+; -2.067 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.098     ; 2.967      ;
+; -2.065 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 2.986      ;
+; -2.061 ; divisor:comb_3|OUT[10] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.077     ; 2.982      ;
+; -2.058 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.332      ; 3.388      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'divisor:comb_3|S'                                                             ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; -1.386 ; y.J       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.505     ; 1.879      ;
+; -1.287 ; y.I       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.208      ;
+; -1.262 ; y.I       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.183      ;
+; -1.242 ; y.A       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.163      ;
+; -1.240 ; y.A       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.161      ;
+; -1.123 ; y.C       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.044      ;
+; -1.110 ; y.J       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.094     ; 2.014      ;
+; -1.109 ; y.F       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.030      ;
+; -1.105 ; y.H       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.026      ;
+; -1.103 ; y.B       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.024      ;
+; -1.099 ; y.H       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.020      ;
+; -1.081 ; y.C       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 2.002      ;
+; -1.037 ; y.A       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.958      ;
+; -1.035 ; y.I       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.956      ;
+; -0.974 ; y.G       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.895      ;
+; -0.950 ; y.D       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.871      ;
+; -0.914 ; y.G       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 2.246      ;
+; -0.903 ; y.E       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 2.235      ;
+; -0.880 ; y.C       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 2.212      ;
+; -0.808 ; y.G       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.729      ;
+; -0.784 ; y.B       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.705      ;
+; -0.781 ; y.B       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.702      ;
+; -0.745 ; y.D       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 2.077      ;
+; -0.727 ; y.F       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.648      ;
+; -0.678 ; y.E       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.599      ;
+; -0.670 ; y.H       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 2.002      ;
+; -0.650 ; y.A       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 1.982      ;
+; -0.592 ; y.D       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.513      ;
+; -0.589 ; y.G       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.510      ;
+; -0.580 ; y.E       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.501      ;
+; -0.578 ; y.E       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.499      ;
+; -0.561 ; y.F       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 1.893      ;
+; -0.525 ; y.B       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 1.857      ;
+; -0.515 ; y.I       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.334      ; 1.847      ;
+; -0.398 ; y.C       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.319      ;
+; -0.214 ; y.F       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.135      ;
+; -0.165 ; y.H       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.086      ;
+; -0.080 ; y.D       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.077     ; 1.001      ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK50'                                                                                         ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.559 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.256      ;
+; 0.640 ; divisor:comb_3|OUT[24] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 0.924      ;
+; 0.641 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.908      ;
+; 0.641 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.908      ;
+; 0.643 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.910      ;
+; 0.643 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.910      ;
+; 0.643 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[1]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.910      ;
+; 0.646 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.913      ;
+; 0.646 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.913      ;
+; 0.656 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.923      ;
+; 0.656 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.923      ;
+; 0.657 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.080      ; 0.923      ;
+; 0.657 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 0.924      ;
+; 0.658 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.080      ; 0.924      ;
+; 0.811 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.508      ;
+; 0.936 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.633      ;
+; 0.959 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.226      ;
+; 0.960 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.227      ;
+; 0.960 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.227      ;
+; 0.970 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.237      ;
+; 0.972 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[1]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.239      ;
+; 0.973 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.240      ;
+; 0.974 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.241      ;
+; 0.975 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.242      ;
+; 0.977 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.244      ;
+; 0.978 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.245      ;
+; 0.978 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.245      ;
+; 0.983 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.250      ;
+; 0.983 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.250      ;
+; 0.987 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.271      ;
+; 0.988 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.255      ;
+; 0.989 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.080      ; 1.255      ;
+; 1.004 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.080      ; 1.270      ;
+; 1.019 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.716      ;
+; 1.023 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 1.721      ;
+; 1.029 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.726      ;
+; 1.049 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 1.747      ;
+; 1.053 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 1.751      ;
+; 1.080 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.347      ;
+; 1.081 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.348      ;
+; 1.084 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.368      ;
+; 1.085 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.352      ;
+; 1.086 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.353      ;
+; 1.086 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.353      ;
+; 1.093 ; divisor:comb_3|OUT[25] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.377      ;
+; 1.095 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.362      ;
+; 1.096 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.363      ;
+; 1.098 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.365      ;
+; 1.099 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.383      ;
+; 1.099 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.366      ;
+; 1.101 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.368      ;
+; 1.103 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.370      ;
+; 1.104 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.371      ;
+; 1.104 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.371      ;
+; 1.109 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.376      ;
+; 1.111 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.395      ;
+; 1.127 ; divisor:comb_3|OUT[23] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.097      ; 1.410      ;
+; 1.144 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.841      ;
+; 1.154 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.851      ;
+; 1.172 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.515      ; 1.873      ;
+; 1.174 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 1.872      ;
+; 1.180 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 1.878      ;
+; 1.202 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.515      ; 1.903      ;
+; 1.207 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.474      ;
+; 1.207 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.474      ;
+; 1.208 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.083      ; 1.477      ;
+; 1.211 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.478      ;
+; 1.212 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.479      ;
+; 1.212 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.479      ;
+; 1.224 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.491      ;
+; 1.225 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.492      ;
+; 1.225 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.492      ;
+; 1.227 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.494      ;
+; 1.229 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.496      ;
+; 1.230 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.497      ;
+; 1.238 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.083      ; 1.507      ;
+; 1.278 ; divisor:comb_3|OUT[13] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.511      ; 1.975      ;
+; 1.281 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.514      ; 1.981      ;
+; 1.283 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.550      ;
+; 1.305 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 2.003      ;
+; 1.307 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.591      ;
+; 1.311 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.514      ; 2.011      ;
+; 1.314 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.515      ; 2.015      ;
+; 1.314 ; divisor:comb_3|OUT[13] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.079      ; 1.579      ;
+; 1.327 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.611      ;
+; 1.328 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.515      ; 2.029      ;
+; 1.329 ; divisor:comb_3|OUT[23] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.613      ;
+; 1.332 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.599      ;
+; 1.333 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.600      ;
+; 1.334 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.083      ; 1.603      ;
+; 1.337 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.604      ;
+; 1.338 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.077      ; 1.601      ;
+; 1.338 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.605      ;
+; 1.344 ; divisor:comb_3|OUT[17] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.098      ; 1.628      ;
+; 1.348 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.615      ;
+; 1.349 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 2.047      ;
+; 1.349 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 2.047      ;
+; 1.350 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.083      ; 1.619      ;
+; 1.351 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.512      ; 2.049      ;
+; 1.351 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.081      ; 1.618      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'divisor:comb_3|S'                                                             ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; 0.598 ; y.D       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 0.861      ;
+; 0.743 ; y.H       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.006      ;
+; 0.753 ; y.F       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.016      ;
+; 0.912 ; y.C       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.175      ;
+; 1.031 ; y.B       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 1.722      ;
+; 1.033 ; y.I       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 1.724      ;
+; 1.060 ; y.D       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.323      ;
+; 1.076 ; y.G       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.339      ;
+; 1.085 ; y.F       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 1.776      ;
+; 1.112 ; y.E       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.375      ;
+; 1.126 ; y.A       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 1.817      ;
+; 1.160 ; y.E       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.423      ;
+; 1.182 ; y.H       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 1.873      ;
+; 1.224 ; y.D       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 1.915      ;
+; 1.231 ; y.E       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.494      ;
+; 1.236 ; y.B       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.499      ;
+; 1.267 ; y.F       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.530      ;
+; 1.299 ; y.C       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 1.990      ;
+; 1.305 ; y.G       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.568      ;
+; 1.314 ; y.B       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.577      ;
+; 1.383 ; y.G       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 2.074      ;
+; 1.389 ; y.E       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.505      ; 2.080      ;
+; 1.506 ; y.D       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.769      ;
+; 1.529 ; y.G       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.792      ;
+; 1.556 ; y.C       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.819      ;
+; 1.559 ; y.C       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.822      ;
+; 1.573 ; y.I       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.836      ;
+; 1.590 ; y.F       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.853      ;
+; 1.602 ; y.J       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.094      ; 1.882      ;
+; 1.602 ; y.A       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.865      ;
+; 1.613 ; y.B       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.876      ;
+; 1.626 ; y.H       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.889      ;
+; 1.665 ; y.H       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.928      ;
+; 1.717 ; y.A       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 1.980      ;
+; 1.763 ; y.I       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 2.026      ;
+; 1.775 ; y.A       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 2.038      ;
+; 1.804 ; y.I       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.077      ; 2.067      ;
+; 1.931 ; y.J       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; -0.334     ; 1.783      ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                               ;
++------------+-----------------+------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name       ; Note                                                          ;
++------------+-----------------+------------------+---------------------------------------------------------------+
+; 310.56 MHz ; 250.0 MHz       ; CLOCK50          ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 460.83 MHz ; 437.64 MHz      ; divisor:comb_3|S ; limit due to minimum period restriction (tmin)                ;
++------------+-----------------+------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary        ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; CLOCK50          ; -2.220 ; -39.691       ;
+; divisor:comb_3|S ; -1.170 ; -8.337        ;
++------------------+--------+---------------+
+
+
++------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary        ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; CLOCK50          ; 0.503 ; 0.000         ;
+; divisor:comb_3|S ; 0.546 ; 0.000         ;
++------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++------------------+--------+----------------------+
+; Clock            ; Slack  ; End Point TNS        ;
++------------------+--------+----------------------+
+; CLOCK50          ; -3.000 ; -37.695              ;
+; divisor:comb_3|S ; -1.285 ; -12.850              ;
++------------------+--------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK50'                                                                                          ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -2.220 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 3.147      ;
+; -2.215 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 3.142      ;
+; -2.205 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 3.132      ;
+; -2.150 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 3.077      ;
+; -2.142 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 3.069      ;
+; -2.127 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 3.056      ;
+; -2.112 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 3.041      ;
+; -2.107 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 3.036      ;
+; -2.097 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 3.026      ;
+; -2.085 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.073     ; 3.011      ;
+; -2.061 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.371      ;
+; -2.061 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.470     ; 2.590      ;
+; -2.059 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.986      ;
+; -2.047 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 2.976      ;
+; -2.045 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.972      ;
+; -2.042 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.972      ;
+; -2.042 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 2.971      ;
+; -1.990 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.920      ;
+; -1.989 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.916      ;
+; -1.988 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.918      ;
+; -1.988 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.470     ; 2.517      ;
+; -1.987 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.917      ;
+; -1.987 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.470     ; 2.516      ;
+; -1.985 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.295      ;
+; -1.984 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.914      ;
+; -1.979 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.909      ;
+; -1.965 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.892      ;
+; -1.961 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.468     ; 2.492      ;
+; -1.955 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.308      ; 3.262      ;
+; -1.951 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 2.880      ;
+; -1.950 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.877      ;
+; -1.947 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.877      ;
+; -1.946 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.876      ;
+; -1.946 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.256      ;
+; -1.946 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.876      ;
+; -1.945 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.875      ;
+; -1.943 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.253      ;
+; -1.942 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.872      ;
+; -1.941 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.871      ;
+; -1.940 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.870      ;
+; -1.937 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 2.866      ;
+; -1.928 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.858      ;
+; -1.920 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.310      ; 3.229      ;
+; -1.915 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.310      ; 3.224      ;
+; -1.914 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.844      ;
+; -1.907 ; divisor:comb_3|OUT[20] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.439      ;
+; -1.906 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.836      ;
+; -1.905 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.310      ; 3.214      ;
+; -1.904 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.831      ;
+; -1.888 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.468     ; 2.419      ;
+; -1.881 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.808      ;
+; -1.881 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.811      ;
+; -1.879 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.468     ; 2.410      ;
+; -1.877 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.807      ;
+; -1.876 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.806      ;
+; -1.875 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.805      ;
+; -1.870 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.180      ;
+; -1.869 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.799      ;
+; -1.868 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.178      ;
+; -1.867 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.797      ;
+; -1.857 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 2.786      ;
+; -1.855 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.387      ;
+; -1.853 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.385      ;
+; -1.852 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.384      ;
+; -1.852 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.782      ;
+; -1.850 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.310      ; 3.159      ;
+; -1.849 ; divisor:comb_3|OUT[12] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.308      ; 3.156      ;
+; -1.842 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 2.771      ;
+; -1.842 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.310      ; 3.151      ;
+; -1.840 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.470     ; 2.369      ;
+; -1.840 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.308      ; 3.147      ;
+; -1.834 ; divisor:comb_3|OUT[15] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.366      ;
+; -1.830 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.140      ;
+; -1.829 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.759      ;
+; -1.828 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.087     ; 2.740      ;
+; -1.828 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.138      ;
+; -1.827 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.757      ;
+; -1.826 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.756      ;
+; -1.823 ; divisor:comb_3|OUT[24] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.470     ; 2.352      ;
+; -1.823 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.753      ;
+; -1.823 ; divisor:comb_3|OUT[21] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.355      ;
+; -1.822 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.072     ; 2.749      ;
+; -1.789 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[15] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.099      ;
+; -1.788 ; divisor:comb_3|OUT[10] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.718      ;
+; -1.786 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.716      ;
+; -1.785 ; divisor:comb_3|OUT[12] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.073     ; 2.711      ;
+; -1.785 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.715      ;
+; -1.784 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.069     ; 2.714      ;
+; -1.782 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.468     ; 2.313      ;
+; -1.782 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.314      ;
+; -1.780 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.312      ;
+; -1.779 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.311      ;
+; -1.773 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.070     ; 2.702      ;
+; -1.772 ; divisor:comb_3|OUT[19] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.470     ; 2.301      ;
+; -1.771 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.303      ;
+; -1.769 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.301      ;
+; -1.768 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.467     ; 2.300      ;
+; -1.763 ; divisor:comb_3|OUT[17] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.468     ; 2.294      ;
+; -1.759 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[15] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.311      ; 3.069      ;
+; -1.759 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.310      ; 3.068      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'divisor:comb_3|S'                                                              ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; -1.170 ; y.J       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.464     ; 1.705      ;
+; -1.065 ; y.I       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.994      ;
+; -1.062 ; y.I       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.991      ;
+; -1.058 ; y.A       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.987      ;
+; -1.046 ; y.A       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.975      ;
+; -0.930 ; y.H       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.858      ;
+; -0.921 ; y.C       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.850      ;
+; -0.905 ; y.J       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.086     ; 1.818      ;
+; -0.903 ; y.H       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.831      ;
+; -0.900 ; y.F       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.828      ;
+; -0.900 ; y.B       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.829      ;
+; -0.883 ; y.C       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.812      ;
+; -0.860 ; y.A       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.789      ;
+; -0.855 ; y.I       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.784      ;
+; -0.794 ; y.G       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.722      ;
+; -0.766 ; y.D       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.694      ;
+; -0.712 ; y.G       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.307      ; 2.018      ;
+; -0.704 ; y.E       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.307      ; 2.010      ;
+; -0.680 ; y.C       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.308      ; 1.987      ;
+; -0.633 ; y.G       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.561      ;
+; -0.617 ; y.B       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.546      ;
+; -0.611 ; y.B       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.540      ;
+; -0.566 ; y.F       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.494      ;
+; -0.563 ; y.D       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.307      ; 1.869      ;
+; -0.520 ; y.A       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.308      ; 1.827      ;
+; -0.515 ; y.E       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.443      ;
+; -0.503 ; y.H       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.307      ; 1.809      ;
+; -0.461 ; y.E       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.389      ;
+; -0.437 ; y.D       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.365      ;
+; -0.428 ; y.G       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.356      ;
+; -0.421 ; y.E       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.349      ;
+; -0.405 ; y.F       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.307      ; 1.711      ;
+; -0.364 ; y.B       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.308      ; 1.671      ;
+; -0.362 ; y.I       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.308      ; 1.669      ;
+; -0.251 ; y.C       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.070     ; 1.180      ;
+; -0.090 ; y.F       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 1.018      ;
+; -0.062 ; y.H       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 0.990      ;
+; 0.026  ; y.D       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.071     ; 0.902      ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK50'                                                                                          ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.503 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.142      ;
+; 0.584 ; divisor:comb_3|OUT[24] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.088      ; 0.843      ;
+; 0.587 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.830      ;
+; 0.587 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.830      ;
+; 0.588 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.831      ;
+; 0.589 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.832      ;
+; 0.589 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[1]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.832      ;
+; 0.591 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.834      ;
+; 0.591 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.834      ;
+; 0.599 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.842      ;
+; 0.600 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.843      ;
+; 0.600 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.843      ;
+; 0.600 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.843      ;
+; 0.602 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 0.845      ;
+; 0.723 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.362      ;
+; 0.833 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.472      ;
+; 0.873 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.116      ;
+; 0.876 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.119      ;
+; 0.876 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.119      ;
+; 0.876 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.119      ;
+; 0.878 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[1]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.121      ;
+; 0.879 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.122      ;
+; 0.887 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.130      ;
+; 0.887 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.130      ;
+; 0.888 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.131      ;
+; 0.889 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.132      ;
+; 0.889 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.132      ;
+; 0.890 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.133      ;
+; 0.890 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.133      ;
+; 0.899 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.142      ;
+; 0.899 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.142      ;
+; 0.907 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.546      ;
+; 0.908 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.088      ; 1.167      ;
+; 0.911 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.550      ;
+; 0.920 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.163      ;
+; 0.933 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.572      ;
+; 0.935 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.574      ;
+; 0.938 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.577      ;
+; 0.972 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.215      ;
+; 0.975 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.218      ;
+; 0.983 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.226      ;
+; 0.984 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.088      ; 1.243      ;
+; 0.986 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.229      ;
+; 0.986 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.229      ;
+; 0.986 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.229      ;
+; 0.988 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.231      ;
+; 0.988 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.231      ;
+; 0.989 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.232      ;
+; 0.994 ; divisor:comb_3|OUT[25] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.087      ; 1.252      ;
+; 0.994 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.088      ; 1.253      ;
+; 0.997 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.240      ;
+; 0.998 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.241      ;
+; 0.999 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.242      ;
+; 1.000 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.243      ;
+; 1.000 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.243      ;
+; 1.017 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.656      ;
+; 1.017 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.088      ; 1.276      ;
+; 1.037 ; divisor:comb_3|OUT[23] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.087      ; 1.295      ;
+; 1.042 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.470      ; 1.683      ;
+; 1.043 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.682      ;
+; 1.045 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.684      ;
+; 1.047 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.686      ;
+; 1.066 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.470      ; 1.707      ;
+; 1.085 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.328      ;
+; 1.085 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.328      ;
+; 1.092 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.074      ; 1.337      ;
+; 1.093 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.336      ;
+; 1.096 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.339      ;
+; 1.096 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.339      ;
+; 1.098 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.341      ;
+; 1.099 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.342      ;
+; 1.099 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.342      ;
+; 1.107 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.350      ;
+; 1.109 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.352      ;
+; 1.110 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.353      ;
+; 1.116 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.074      ; 1.361      ;
+; 1.136 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.470      ; 1.777      ;
+; 1.155 ; divisor:comb_3|OUT[13] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.467      ; 1.793      ;
+; 1.158 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.797      ;
+; 1.160 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.470      ; 1.801      ;
+; 1.167 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.470      ; 1.808      ;
+; 1.169 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.412      ;
+; 1.177 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.470      ; 1.818      ;
+; 1.178 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.088      ; 1.437      ;
+; 1.192 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.435      ;
+; 1.195 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.438      ;
+; 1.202 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.074      ; 1.447      ;
+; 1.203 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.446      ;
+; 1.205 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.087      ; 1.463      ;
+; 1.205 ; divisor:comb_3|OUT[13] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.071      ; 1.447      ;
+; 1.206 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.449      ;
+; 1.206 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.449      ;
+; 1.208 ; divisor:comb_3|OUT[17] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.087      ; 1.466      ;
+; 1.209 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.072      ; 1.452      ;
+; 1.214 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.470      ; 1.855      ;
+; 1.214 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.853      ;
+; 1.215 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.854      ;
+; 1.216 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.468      ; 1.855      ;
+; 1.217 ; divisor:comb_3|OUT[23] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.087      ; 1.475      ;
+; 1.217 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.074      ; 1.462      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'divisor:comb_3|S'                                                              ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; 0.546 ; y.D       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 0.788      ;
+; 0.657 ; y.H       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 0.899      ;
+; 0.700 ; y.F       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 0.942      ;
+; 0.843 ; y.C       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.085      ;
+; 0.945 ; y.I       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.580      ;
+; 0.956 ; y.B       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.591      ;
+; 0.971 ; y.D       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.213      ;
+; 0.985 ; y.F       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.620      ;
+; 0.988 ; y.G       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.230      ;
+; 1.006 ; y.A       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.641      ;
+; 1.029 ; y.E       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.271      ;
+; 1.030 ; y.E       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.272      ;
+; 1.073 ; y.H       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.708      ;
+; 1.120 ; y.E       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.362      ;
+; 1.125 ; y.B       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.366      ;
+; 1.129 ; y.D       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.764      ;
+; 1.159 ; y.F       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.401      ;
+; 1.199 ; y.C       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.834      ;
+; 1.203 ; y.G       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.445      ;
+; 1.208 ; y.B       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.449      ;
+; 1.274 ; y.G       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.909      ;
+; 1.278 ; y.E       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.464      ; 1.913      ;
+; 1.389 ; y.D       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.630      ;
+; 1.409 ; y.G       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.651      ;
+; 1.416 ; y.I       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.657      ;
+; 1.427 ; y.C       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.668      ;
+; 1.428 ; y.C       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.669      ;
+; 1.456 ; y.A       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.697      ;
+; 1.461 ; y.J       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.086      ; 1.718      ;
+; 1.472 ; y.F       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.714      ;
+; 1.484 ; y.B       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.725      ;
+; 1.501 ; y.H       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.743      ;
+; 1.510 ; y.H       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.751      ;
+; 1.557 ; y.A       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.798      ;
+; 1.606 ; y.A       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.847      ;
+; 1.623 ; y.I       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.071      ; 1.865      ;
+; 1.655 ; y.I       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.070      ; 1.896      ;
+; 1.774 ; y.J       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; -0.308     ; 1.637      ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary        ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; CLOCK50          ; -0.733 ; -9.646        ;
+; divisor:comb_3|S ; -0.135 ; -0.410        ;
++------------------+--------+---------------+
+
+
++------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary        ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; CLOCK50          ; 0.260 ; 0.000         ;
+; divisor:comb_3|S ; 0.273 ; 0.000         ;
++------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++------------------+--------+----------------------+
+; Clock            ; Slack  ; End Point TNS        ;
++------------------+--------+----------------------+
+; CLOCK50          ; -3.000 ; -31.857              ;
+; divisor:comb_3|S ; -1.000 ; -10.000              ;
++------------------+--------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK50'                                                                                          ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -0.733 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.681      ;
+; -0.716 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.043     ; 1.660      ;
+; -0.709 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.655      ;
+; -0.700 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.844      ;
+; -0.696 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.246     ; 1.437      ;
+; -0.686 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.632      ;
+; -0.686 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.632      ;
+; -0.685 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.633      ;
+; -0.684 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.828      ;
+; -0.683 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.153      ; 1.823      ;
+; -0.661 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.609      ;
+; -0.660 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.606      ;
+; -0.659 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.605      ;
+; -0.643 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.246     ; 1.384      ;
+; -0.638 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.586      ;
+; -0.633 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.777      ;
+; -0.631 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.247     ; 1.371      ;
+; -0.628 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.772      ;
+; -0.625 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.571      ;
+; -0.620 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.244     ; 1.363      ;
+; -0.617 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.565      ;
+; -0.617 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.761      ;
+; -0.617 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.761      ;
+; -0.616 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.153      ; 1.756      ;
+; -0.610 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.558      ;
+; -0.599 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.545      ;
+; -0.595 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.544      ;
+; -0.588 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.537      ;
+; -0.583 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.529      ;
+; -0.578 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.042     ; 1.523      ;
+; -0.576 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.525      ;
+; -0.575 ; divisor:comb_3|OUT[20] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.319      ;
+; -0.574 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.523      ;
+; -0.573 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.519      ;
+; -0.573 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.522      ;
+; -0.572 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.521      ;
+; -0.567 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.244     ; 1.310      ;
+; -0.566 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.245     ; 1.308      ;
+; -0.565 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.514      ;
+; -0.565 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.514      ;
+; -0.564 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.708      ;
+; -0.561 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.705      ;
+; -0.560 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.509      ;
+; -0.559 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.042     ; 1.504      ;
+; -0.557 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.247     ; 1.297      ;
+; -0.552 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.296      ;
+; -0.552 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.296      ;
+; -0.551 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.295      ;
+; -0.550 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.694      ;
+; -0.549 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.497      ;
+; -0.549 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.497      ;
+; -0.548 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.156      ; 1.691      ;
+; -0.548 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.692      ;
+; -0.547 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.496      ;
+; -0.545 ; divisor:comb_3|OUT[12] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.043     ; 1.489      ;
+; -0.544 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.156      ; 1.687      ;
+; -0.542 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.488      ;
+; -0.542 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.491      ;
+; -0.542 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.491      ;
+; -0.542 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.491      ;
+; -0.542 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.491      ;
+; -0.541 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.490      ;
+; -0.541 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.490      ;
+; -0.539 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.488      ;
+; -0.538 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.487      ;
+; -0.535 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.049     ; 1.473      ;
+; -0.533 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.049     ; 1.471      ;
+; -0.527 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.152      ; 1.666      ;
+; -0.525 ; divisor:comb_3|OUT[19] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.247     ; 1.265      ;
+; -0.525 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.156      ; 1.668      ;
+; -0.525 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.156      ; 1.668      ;
+; -0.522 ; divisor:comb_3|OUT[21] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.266      ;
+; -0.518 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.041     ; 1.464      ;
+; -0.516 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.465      ;
+; -0.516 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.465      ;
+; -0.515 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.464      ;
+; -0.514 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.463      ;
+; -0.512 ; divisor:comb_3|OUT[12] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.153      ; 1.652      ;
+; -0.510 ; divisor:comb_3|OUT[15] ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.244     ; 1.253      ;
+; -0.508 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.043     ; 1.452      ;
+; -0.507 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.039     ; 1.455      ;
+; -0.505 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.045     ; 1.447      ;
+; -0.504 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|S       ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.453      ;
+; -0.502 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.245     ; 1.244      ;
+; -0.499 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.243      ;
+; -0.499 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.243      ;
+; -0.499 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.156      ; 1.642      ;
+; -0.498 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.243     ; 1.242      ;
+; -0.498 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.156      ; 1.641      ;
+; -0.497 ; divisor:comb_3|OUT[17] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.245     ; 1.239      ;
+; -0.497 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.641      ;
+; -0.495 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.639      ;
+; -0.494 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.049     ; 1.432      ;
+; -0.493 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[15] ; CLOCK50      ; CLOCK50     ; 1.000        ; 0.157      ; 1.637      ;
+; -0.491 ; divisor:comb_3|OUT[12] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.045     ; 1.433      ;
+; -0.489 ; divisor:comb_3|OUT[13] ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.045     ; 1.431      ;
+; -0.487 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.244     ; 1.230      ;
+; -0.487 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[13] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.244     ; 1.230      ;
+; -0.486 ; divisor:comb_3|OUT[15] ; divisor:comb_3|OUT[7]  ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.244     ; 1.229      ;
+; -0.483 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[12] ; CLOCK50      ; CLOCK50     ; 1.000        ; -0.038     ; 1.432      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'divisor:comb_3|S'                                                              ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; -0.135 ; y.J       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.241     ; 0.881      ;
+; -0.103 ; y.I       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 1.051      ;
+; -0.093 ; y.I       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 1.041      ;
+; -0.044 ; y.A       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.992      ;
+; -0.043 ; y.A       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.991      ;
+; -0.035 ; y.J       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.047     ; 0.975      ;
+; -0.029 ; y.F       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.977      ;
+; -0.021 ; y.H       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.969      ;
+; -0.015 ; y.C       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.963      ;
+; -0.008 ; y.H       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.956      ;
+; -0.002 ; y.B       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.950      ;
+; 0.006  ; y.C       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.942      ;
+; 0.037  ; y.I       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.911      ;
+; 0.049  ; y.G       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.899      ;
+; 0.051  ; y.A       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.897      ;
+; 0.059  ; y.G       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 1.083      ;
+; 0.063  ; y.D       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.885      ;
+; 0.066  ; y.C       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 1.076      ;
+; 0.066  ; y.E       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 1.076      ;
+; 0.119  ; y.G       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.829      ;
+; 0.141  ; y.F       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.807      ;
+; 0.143  ; y.D       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 0.999      ;
+; 0.151  ; y.B       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.797      ;
+; 0.153  ; y.B       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.795      ;
+; 0.171  ; y.H       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 0.971      ;
+; 0.171  ; y.E       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.777      ;
+; 0.208  ; y.E       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.740      ;
+; 0.226  ; y.E       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.722      ;
+; 0.226  ; y.G       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.722      ;
+; 0.229  ; y.A       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 0.913      ;
+; 0.230  ; y.D       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.718      ;
+; 0.231  ; y.F       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 0.911      ;
+; 0.243  ; y.B       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 0.899      ;
+; 0.251  ; y.I       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; 0.155      ; 0.891      ;
+; 0.310  ; y.C       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.638      ;
+; 0.402  ; y.F       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.546      ;
+; 0.428  ; y.H       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.520      ;
+; 0.472  ; y.D       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 1.000        ; -0.039     ; 0.476      ;
++--------+-----------+---------+------------------+------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK50'                                                                                          ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.260 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.588      ;
+; 0.292 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.417      ;
+; 0.293 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.418      ;
+; 0.293 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.418      ;
+; 0.293 ; divisor:comb_3|OUT[24] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.426      ;
+; 0.294 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.419      ;
+; 0.294 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.419      ;
+; 0.294 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[1]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.419      ;
+; 0.295 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.420      ;
+; 0.300 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.425      ;
+; 0.300 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.425      ;
+; 0.301 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.426      ;
+; 0.301 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.426      ;
+; 0.301 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.426      ;
+; 0.391 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.719      ;
+; 0.442 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.567      ;
+; 0.442 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.567      ;
+; 0.443 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.568      ;
+; 0.446 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.579      ;
+; 0.450 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.575      ;
+; 0.452 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.577      ;
+; 0.453 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.578      ;
+; 0.453 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[1]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.578      ;
+; 0.454 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[22] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.579      ;
+; 0.455 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.580      ;
+; 0.455 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.580      ;
+; 0.456 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.581      ;
+; 0.456 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[2]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.581      ;
+; 0.457 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.785      ;
+; 0.458 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.583      ;
+; 0.458 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.583      ;
+; 0.461 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.586      ;
+; 0.462 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.587      ;
+; 0.471 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.799      ;
+; 0.472 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.801      ;
+; 0.474 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.802      ;
+; 0.482 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.811      ;
+; 0.484 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.813      ;
+; 0.489 ; divisor:comb_3|OUT[25] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.622      ;
+; 0.505 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.630      ;
+; 0.506 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.631      ;
+; 0.506 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.639      ;
+; 0.508 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.633      ;
+; 0.508 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.633      ;
+; 0.509 ; divisor:comb_3|OUT[21] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.642      ;
+; 0.509 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.634      ;
+; 0.513 ; divisor:comb_3|OUT[23] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.048      ; 0.645      ;
+; 0.513 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.638      ;
+; 0.518 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.643      ;
+; 0.518 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.643      ;
+; 0.519 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[3]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.644      ;
+; 0.521 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.654      ;
+; 0.521 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.646      ;
+; 0.521 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.646      ;
+; 0.522 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.647      ;
+; 0.522 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[4]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.647      ;
+; 0.524 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.649      ;
+; 0.527 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.247      ; 0.858      ;
+; 0.537 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[20] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.865      ;
+; 0.540 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.868      ;
+; 0.547 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.247      ; 0.878      ;
+; 0.548 ; divisor:comb_3|OUT[16] ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.877      ;
+; 0.549 ; divisor:comb_3|OUT[22] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.878      ;
+; 0.557 ; divisor:comb_3|OUT[13] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.244      ; 0.885      ;
+; 0.571 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.043      ; 0.698      ;
+; 0.571 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.696      ;
+; 0.572 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.697      ;
+; 0.574 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.699      ;
+; 0.574 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.699      ;
+; 0.575 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.700      ;
+; 0.584 ; divisor:comb_3|OUT[6]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.709      ;
+; 0.585 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.710      ;
+; 0.585 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[5]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.710      ;
+; 0.587 ; divisor:comb_3|OUT[2]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.712      ;
+; 0.588 ; divisor:comb_3|OUT[4]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.713      ;
+; 0.588 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[6]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.713      ;
+; 0.589 ; divisor:comb_3|OUT[0]  ; divisor:comb_3|OUT[0]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.714      ;
+; 0.589 ; divisor:comb_3|OUT[14] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.722      ;
+; 0.591 ; divisor:comb_3|OUT[23] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.724      ;
+; 0.591 ; divisor:comb_3|OUT[10] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.043      ; 0.718      ;
+; 0.594 ; divisor:comb_3|OUT[17] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.727      ;
+; 0.601 ; divisor:comb_3|OUT[13] ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.040      ; 0.725      ;
+; 0.602 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.247      ; 0.933      ;
+; 0.604 ; divisor:comb_3|OUT[20] ; divisor:comb_3|OUT[21] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.737      ;
+; 0.607 ; divisor:comb_3|OUT[19] ; divisor:comb_3|OUT[19] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.049      ; 0.740      ;
+; 0.609 ; divisor:comb_3|OUT[7]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.038      ; 0.731      ;
+; 0.613 ; divisor:comb_3|OUT[8]  ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.247      ; 0.944      ;
+; 0.615 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[23] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.944      ;
+; 0.632 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[24] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.246      ; 0.962      ;
+; 0.637 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[18] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.043      ; 0.764      ;
+; 0.637 ; divisor:comb_3|OUT[5]  ; divisor:comb_3|OUT[11] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.762      ;
+; 0.637 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[9]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.762      ;
+; 0.638 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.967      ;
+; 0.638 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[14] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.967      ;
+; 0.640 ; divisor:comb_3|OUT[18] ; divisor:comb_3|OUT[25] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.245      ; 0.969      ;
+; 0.640 ; divisor:comb_3|OUT[3]  ; divisor:comb_3|OUT[10] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.765      ;
+; 0.641 ; divisor:comb_3|OUT[1]  ; divisor:comb_3|OUT[8]  ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.041      ; 0.766      ;
+; 0.642 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[15] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.247      ; 0.973      ;
+; 0.646 ; divisor:comb_3|OUT[9]  ; divisor:comb_3|OUT[16] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.043      ; 0.773      ;
+; 0.647 ; divisor:comb_3|OUT[11] ; divisor:comb_3|OUT[17] ; CLOCK50      ; CLOCK50     ; 0.000        ; 0.247      ; 0.978      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'divisor:comb_3|S'                                                              ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+; 0.273 ; y.D       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.396      ;
+; 0.335 ; y.F       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.458      ;
+; 0.335 ; y.H       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.458      ;
+; 0.411 ; y.C       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.534      ;
+; 0.446 ; y.B       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.771      ;
+; 0.446 ; y.I       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.771      ;
+; 0.468 ; y.F       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.793      ;
+; 0.483 ; y.D       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.606      ;
+; 0.489 ; y.G       ; y.G     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.612      ;
+; 0.494 ; y.E       ; y.D     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.617      ;
+; 0.512 ; y.E       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.635      ;
+; 0.518 ; y.H       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.843      ;
+; 0.536 ; y.A       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.861      ;
+; 0.536 ; y.D       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.861      ;
+; 0.555 ; y.E       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.678      ;
+; 0.559 ; y.B       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.682      ;
+; 0.563 ; y.F       ; y.E     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.686      ;
+; 0.579 ; y.B       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.702      ;
+; 0.579 ; y.C       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.904      ;
+; 0.588 ; y.G       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.711      ;
+; 0.614 ; y.G       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.939      ;
+; 0.617 ; y.E       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.241      ; 0.942      ;
+; 0.657 ; y.D       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.780      ;
+; 0.667 ; y.G       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.790      ;
+; 0.695 ; y.C       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.818      ;
+; 0.699 ; y.C       ; y.C     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.822      ;
+; 0.713 ; y.F       ; y.F     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.836      ;
+; 0.714 ; y.I       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.837      ;
+; 0.717 ; y.J       ; y.J     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.047      ; 0.848      ;
+; 0.717 ; y.H       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.840      ;
+; 0.730 ; y.H       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.853      ;
+; 0.732 ; y.B       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.855      ;
+; 0.736 ; y.A       ; y.B     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.859      ;
+; 0.785 ; y.I       ; y.H     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.908      ;
+; 0.796 ; y.I       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.919      ;
+; 0.797 ; y.A       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.920      ;
+; 0.820 ; y.A       ; y.I     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; 0.039      ; 0.943      ;
+; 0.875 ; y.J       ; y.A     ; divisor:comb_3|S ; divisor:comb_3|S ; 0.000        ; -0.155     ; 0.804      ;
++-------+-----------+---------+------------------+------------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++-------------------+---------+-------+----------+---------+---------------------+
+; Clock             ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack  ; -2.520  ; 0.260 ; N/A      ; N/A     ; -3.000              ;
+;  CLOCK50          ; -2.520  ; 0.260 ; N/A      ; N/A     ; -3.000              ;
+;  divisor:comb_3|S ; -1.386  ; 0.273 ; N/A      ; N/A     ; -1.285              ;
+; Design-wide TNS   ; -57.255 ; 0.0   ; 0.0      ; 0.0     ; -50.545             ;
+;  CLOCK50          ; -46.989 ; 0.000 ; N/A      ; N/A     ; -37.695             ;
+;  divisor:comb_3|S ; -10.266 ; 0.000 ; N/A      ; N/A     ; -12.850             ;
++-------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; HEX0[6]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[5]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[4]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; SW[16]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[17]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[15]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLOCK50                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.38 V              ; -0.0144 V           ; 0.227 V                              ; 0.024 V                              ; 3.14e-10 s                  ; 3.39e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.38 V             ; -0.0144 V          ; 0.227 V                             ; 0.024 V                             ; 3.14e-10 s                 ; 3.39e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.33 V              ; -0.00496 V          ; 0.223 V                              ; 0.086 V                              ; 2.9e-09 s                   ; 2.73e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.33 V             ; -0.00496 V         ; 0.223 V                             ; 0.086 V                             ; 2.9e-09 s                  ; 2.73e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.38 V              ; -0.0144 V           ; 0.227 V                              ; 0.024 V                              ; 3.14e-10 s                  ; 3.39e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.38 V             ; -0.0144 V          ; 0.227 V                             ; 0.024 V                             ; 3.14e-10 s                 ; 3.39e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.38 V              ; -0.0144 V           ; 0.227 V                              ; 0.024 V                              ; 3.14e-10 s                  ; 3.39e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.38 V             ; -0.0144 V          ; 0.227 V                             ; 0.024 V                             ; 3.14e-10 s                 ; 3.39e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.33 V              ; -0.00467 V          ; 0.226 V                              ; 0.087 V                              ; 2.91e-09 s                  ; 2.74e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.33 V             ; -0.00467 V         ; 0.226 V                             ; 0.087 V                             ; 2.91e-09 s                 ; 2.74e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.36 V              ; -0.00552 V          ; 0.11 V                               ; 0.007 V                              ; 4.54e-10 s                  ; 4.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.36 V             ; -0.00552 V         ; 0.11 V                              ; 0.007 V                             ; 4.54e-10 s                 ; 4.35e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.33 V              ; -0.00269 V          ; 0.13 V                               ; 0.055 V                              ; 3.54e-09 s                  ; 3.29e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.33 V             ; -0.00269 V         ; 0.13 V                              ; 0.055 V                             ; 3.54e-09 s                 ; 3.29e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.36 V              ; -0.00552 V          ; 0.11 V                               ; 0.007 V                              ; 4.54e-10 s                  ; 4.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.36 V             ; -0.00552 V         ; 0.11 V                              ; 0.007 V                             ; 4.54e-10 s                 ; 4.35e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.36 V              ; -0.00552 V          ; 0.11 V                               ; 0.007 V                              ; 4.54e-10 s                  ; 4.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.36 V             ; -0.00552 V         ; 0.11 V                              ; 0.007 V                             ; 4.54e-10 s                 ; 4.35e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.33 V              ; -0.00265 V          ; 0.133 V                              ; 0.056 V                              ; 3.55e-09 s                  ; 3.31e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.33 V             ; -0.00265 V         ; 0.133 V                             ; 0.056 V                             ; 3.55e-09 s                 ; 3.31e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.64 V              ; -0.0113 V           ; 0.208 V                              ; 0.179 V                              ; 2.38e-09 s                  ; 2.23e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.64 V             ; -0.0113 V          ; 0.208 V                             ; 0.179 V                             ; 2.38e-09 s                 ; 2.23e-09 s                 ; No                        ; Yes                       ;
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Setup Transfers                                                                 ;
++------------------+------------------+----------+----------+----------+----------+
+; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+------------------+----------+----------+----------+----------+
+; CLOCK50          ; CLOCK50          ; 715      ; 0        ; 0        ; 0        ;
+; divisor:comb_3|S ; divisor:comb_3|S ; 38       ; 0        ; 0        ; 0        ;
++------------------+------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------+
+; Hold Transfers                                                                  ;
++------------------+------------------+----------+----------+----------+----------+
+; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+------------------+----------+----------+----------+----------+
+; CLOCK50          ; CLOCK50          ; 715      ; 0        ; 0        ; 0        ;
+; divisor:comb_3|S ; divisor:comb_3|S ; 38       ; 0        ; 0        ; 0        ;
++------------------+------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 51    ; 51   ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 91    ; 91   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------+
+; Clock Status Summary                                     ;
++------------------+------------------+------+-------------+
+; Target           ; Clock            ; Type ; Status      ;
++------------------+------------------+------+-------------+
+; CLOCK50          ; CLOCK50          ; Base ; Constrained ;
+; divisor:comb_3|S ; divisor:comb_3|S ; Base ; Constrained ;
++------------------+------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; SW[15]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[16]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[17]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; HEX0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; SW[15]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[16]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[17]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; HEX0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Fri Dec 15 16:34:24 2023
+Info: Command: quartus_sta moore -c mealy
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'mealy.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK50 CLOCK50
+    Info (332105): create_clock -period 1.000 -name divisor:comb_3|S divisor:comb_3|S
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.520
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.520             -46.989 CLOCK50 
+    Info (332119):    -1.386             -10.266 divisor:comb_3|S 
+Info (332146): Worst-case hold slack is 0.559
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.559               0.000 CLOCK50 
+    Info (332119):     0.598               0.000 divisor:comb_3|S 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -37.695 CLOCK50 
+    Info (332119):    -1.285             -12.850 divisor:comb_3|S 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.220
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.220             -39.691 CLOCK50 
+    Info (332119):    -1.170              -8.337 divisor:comb_3|S 
+Info (332146): Worst-case hold slack is 0.503
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.503               0.000 CLOCK50 
+    Info (332119):     0.546               0.000 divisor:comb_3|S 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -37.695 CLOCK50 
+    Info (332119):    -1.285             -12.850 divisor:comb_3|S 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.733
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.733              -9.646 CLOCK50 
+    Info (332119):    -0.135              -0.410 divisor:comb_3|S 
+Info (332146): Worst-case hold slack is 0.260
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.260               0.000 CLOCK50 
+    Info (332119):     0.273               0.000 divisor:comb_3|S 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -31.857 CLOCK50 
+    Info (332119):    -1.000             -10.000 divisor:comb_3|S 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Fri Dec 15 16:34:27 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,0 +1,6 @@
+module verilog (A,B,S);
+input wire A,B;
+output wire S;
+and (S, A, B);
+endmodule
+

@@ -1,0 +1,27 @@
+module Verilog1(SW, HEX3);
+
+    input [0:17]SW;
+    reg [3:0]a;
+    reg [3:0]b;
+    
+    reg [3:0]inbcd;
+    
+    output [0:6]HEX3;
+    
+    always @(SW)
+        begin
+            a <= {SW[17], SW[16], SW[15], SW[14]};
+            b <= {SW[13], SW[12], SW[11], SW[10]};
+            case({SW[2], SW[1], SW[0]})
+                3'b000: inbcd = a & b;
+                3'b001: inbcd = a | b;
+                3'b010: inbcd = a + b;
+                3'b011: inbcd = a - b;
+                3'b100: inbcd = a * 2;
+                3'b101: inbcd = a / 2;
+            endcase
+        end
+ 
+    
+    verilog bcd(.SW(inbcd), .HEX0(HEX3));
+endmodule

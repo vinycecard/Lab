@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/statemachine.qarlog
+
+Archive:	C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/statemachine.qar
+Date:		Wed Dec 21 12:37:31 2022
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/MUX.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/contadorassinc.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/decodificator.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/divisor.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/muxin.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/nextstate.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/outputlogic.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/statemachine.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/statemachine.qpf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/MAQUINA DE ESTADOS/statemachine.qsf
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 11 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu Oct 05 20:27:15 2023
+Source archive file:	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/MAQUINA DE ESTADOS/statemachine.qar
+Archive was extracted into	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/MAQUINA DE ESTADOS/statemachine_restored/
+		 - successfully.

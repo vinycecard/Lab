@@ -1,0 +1,57 @@
+|contadorcresc
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => ~NO_FANOUT~
+SW[17] => display[0].ACLR
+SW[17] => display[1].ACLR
+SW[17] => display[2].ACLR
+SW[17] => display[3].ACLR
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => display.OUTPUTSELECT
+KEY[3] => display.OUTPUTSELECT
+KEY[3] => display.OUTPUTSELECT
+KEY[3] => display.OUTPUTSELECT
+KEY[3] => display[0].CLK
+KEY[3] => display[1].CLK
+KEY[3] => display[2].CLK
+KEY[3] => display[3].CLK
+CLK => ~NO_FANOUT~
+HEX2[6] <= verilog:comb_33.HEX2
+HEX2[5] <= verilog:comb_33.HEX2
+HEX2[4] <= verilog:comb_33.HEX2
+HEX2[3] <= verilog:comb_33.HEX2
+HEX2[2] <= verilog:comb_33.HEX2
+HEX2[1] <= verilog:comb_33.HEX2
+HEX2[0] <= verilog:comb_33.HEX2
+
+
+|contadorcresc|verilog:comb_33
+SW[17] => Decoder0.IN3
+SW[16] => Decoder0.IN2
+SW[15] => Decoder0.IN1
+SW[14] => Decoder0.IN0
+HEX2[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

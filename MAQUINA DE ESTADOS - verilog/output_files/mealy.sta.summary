@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK50'
+Slack : -2.520
+TNS   : -46.989
+
+Type  : Slow 1200mV 85C Model Setup 'divisor:comb_3|S'
+Slack : -1.386
+TNS   : -10.266
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK50'
+Slack : 0.559
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'divisor:comb_3|S'
+Slack : 0.598
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK50'
+Slack : -3.000
+TNS   : -37.695
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor:comb_3|S'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK50'
+Slack : -2.220
+TNS   : -39.691
+
+Type  : Slow 1200mV 0C Model Setup 'divisor:comb_3|S'
+Slack : -1.170
+TNS   : -8.337
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK50'
+Slack : 0.503
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'divisor:comb_3|S'
+Slack : 0.546
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK50'
+Slack : -3.000
+TNS   : -37.695
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor:comb_3|S'
+Slack : -1.285
+TNS   : -12.850
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK50'
+Slack : -0.733
+TNS   : -9.646
+
+Type  : Fast 1200mV 0C Model Setup 'divisor:comb_3|S'
+Slack : -0.135
+TNS   : -0.410
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK50'
+Slack : 0.260
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'divisor:comb_3|S'
+Slack : 0.273
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK50'
+Slack : -3.000
+TNS   : -31.857
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor:comb_3|S'
+Slack : -1.000
+TNS   : -10.000
+
+------------------------------------------------------------

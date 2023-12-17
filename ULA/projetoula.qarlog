@@ -1,0 +1,32 @@
+Quartus Prime Archive log --	C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/projetoula.qarlog
+
+Archive:	C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/projetoula.qar
+Date:		Sun Nov 27 12:21:13 2022
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/Subtrator1bit.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/Ulafinal.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/decodificator.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/finalprojectsoma.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/projetoula.bdf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/projetoula.qpf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/projetoula.qsf
+C:/Users/PC10-IONIC/OneDrive/Documentos/QUARTUS/ULA/somador1bit.bdf
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 9 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Fri Sep 29 12:48:13 2023
+Source archive file:	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/ULA/projetoula.qar
+Archive was extracted into	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/ULA/projetoula_restored/
+		 - successfully.
+
+
+******* Archived project restoration attempt on Fri Oct 06 15:34:04 2023
+Source archive file:	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/ULA/projetoula.qar
+Archive was extracted into	C:/Users/viny_/OneDrive/Documents/UNIFESP/Laboratório de Circuitos Digitais/ULA/projetoula_restored/
+		 - successfully.

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov 30 21:15:34 2022
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : projetoula
+Top-level Entity Name : projetoula
+Family : Cyclone IV E
+Total logic elements : 20
+    Total combinational functions : 20
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
